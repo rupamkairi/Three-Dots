@@ -1,0 +1,14 @@
+{
+  "name": "three-dots",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  },
+  "scripts": {
+    "e-r": "lerna run dev --parallel --scope express-three-dots --scope react-three-dots",
+    "e-s": "lerna run dev --parallel --scope express-three-dots --scope svelte-three-dots",
+    "e-v": "lerna run dev --parallel --scope express-three-dots --vue react-three-dots",
+    "dev": "lerna run dev --parallel",
+    "postinstall": "lerna bootstrap"
+  }
+}

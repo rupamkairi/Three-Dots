@@ -1,0 +1,9 @@
+{
+  "packages": [
+    "express-three-dots",
+    "react-three-dots",
+    "svelte-three-dots",
+    "vue-three-dots"
+  ],
+  "version": "0.0.0"
+}

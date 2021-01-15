@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.heading {
+  padding-top: 4rem;
+  padding-left: 2rem
+}
