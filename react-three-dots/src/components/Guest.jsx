@@ -17,6 +17,7 @@ export default function Guest() {
 
       // fist time socket setup
       _socket.on("connect", () => {
+        // console.log("_socket: " + _socket.id);
         setSocket(_socket);
         dispatch(changeGuestChatSocket({ chatSocketId: _socket.id }));
       });
@@ -25,6 +26,7 @@ export default function Guest() {
 
   const sendMessage = () => {
     // socket state reuse
+    // console.log("socket: " + socket.id);
     socket.emit("message", msg);
     setMsg("");
   };
@@ -53,7 +55,6 @@ export default function Guest() {
           chat
         </button>
       )}
-      <pre>{socket ? socket.ids : ""}</pre>
     </div>
   );
 }

@@ -9,7 +9,7 @@ export const guestChatSlice = createSlice({
     changeGuestChatSocket: (state, action) => {
       const { chatSocketId } = action.payload;
       state.chatSocketId = chatSocketId;
-      console.log("new chat socketId: " + chatSocketId);
+      console.log("New User connected with socketId: " + chatSocketId);
     },
   },
 });

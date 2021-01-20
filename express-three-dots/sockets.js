@@ -14,6 +14,7 @@ sockets.init = (server) => {
   var io = new Server(server, {
     cors: corsOptions,
   });
+  let messages = [];
 
   io.on("connection", (socket) => {
     console.log("user " + socket.id + " connected");
@@ -21,7 +22,13 @@ sockets.init = (server) => {
     // socket is open and can transfer information
     // console.log(socket);
     socket.on("message", (msg) => {
-      console.log("message: " + msg + " >>> by user " + socket.id);
+      let sender = `${socket.id.slice(0, 3)}...${socket.id.slice(
+        socket.id.length - 3
+      )}`;
+      messages.push({ msg, sender });
+
+      // console.log(messages);
+      io.emit("message", messages);
     });
 
     socket.on("disconnect", () => {
